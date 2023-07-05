@@ -21,8 +21,11 @@ def send(msg):
     print(client.recv(2048).decode(FORMAT))
 
 
-send("guna busa")
-input()
-send("hello")
-input()
-send(DISCONNECT_MESSAGE)
+while True:
+    chat = input("[Enter:]")
+    if chat == "discon":
+        send(DISCONNECT_MESSAGE)
+        break
+    send(chat)
+
+print("Connection END!!!")
